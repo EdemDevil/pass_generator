@@ -9,22 +9,20 @@ nr_letters = int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-#Если введенное число входит в диапозон от 0 до него самого
-if (nr_letters in range(0, nr_letters + 1)) and (nr_symbols in range(0, nr_symbols + 1)) and (nr_numbers in range(0, nr_numbers + 1)):
-    #Объявляем пустой список
-    list = []
-    #Перебираем список в диапозоне введенного числа
-    for letter in range(0, nr_letters):
-        #Делаем случайную выборку из списка букв
-        a = r.choice(letters)
-        #Добавляем этот элемент в пустой список
-        list.append(a)
-    for symbol in range(0, nr_symbols):
-        a = r.choice(symbols)
-        list.append(a)
-    for number in range(0, nr_numbers):
-        a = r.randint(0, number)
-        list.append(str(a))
-    #Перемешиваем элементы в списке и выводим его
-    a = r.shuffle(list)
-    print("".join(list))
+#Объявляем пустой список
+list = []
+#Перебираем список в диапозоне введенного числа
+for letter in range(0, nr_letters):
+    #Делаем случайную выборку из списка букв
+    a = r.choice(letters)
+    #Добавляем этот элемент в пустой список
+    list.append(a)
+for symbol in range(0, nr_symbols):
+    a = r.choice(symbols)
+    list.append(a)
+for number in range(0, nr_numbers):
+    a = r.randint(0, number)
+    list.append(str(a))
+#Перемешиваем элементы в списке и выводим его
+a = r.shuffle(list)
+print("".join(list))
